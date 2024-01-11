@@ -1,0 +1,26 @@
+/* Program 2 in project documentation written in yarlang */
+begin
+
+    func bool foo(bool p, bool q, bool r) begin
+	print("foo \np ");
+	print(p);
+	print("\nq "); 
+	print(q);
+	print("\nr "); 
+	print(r);
+
+        if(r) begin
+            return p -> (q or r);
+	end
+        else begin
+            return q <-> r /* ERROR NO SEMICOLON AFTER THE STATEMENT */
+        end	
+    end
+
+    foreach(a in {true, false}) begin
+        foreach(b in {true, false}) begin
+            bool c = foo(p, q, false);
+            print(a, b, c); 
+        end
+    end
+end

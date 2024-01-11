@@ -1,0 +1,49 @@
+begin
+    bool Variable1 = true;
+    bool Variable2;
+    bool Variable3;
+    bool[] Array1 = {true, TRUE, false, FALSE};
+    bool[] Array2;
+    Variable2 = FALSE;
+
+    input(Variable3);
+    print(Variable3);
+    print(" output message string ");
+
+    /* single line comment */
+    /*  multi
+        line
+        comment
+    */
+
+    Array1 += Variable1 and Variable2;
+    Array2 += Variable1 | Variable2;
+
+    if (true == TRUE) begin
+        bool  tmpVariable;
+
+        if (false != FALSE) begin
+            tmpVariable = false imp true and true;
+        end
+        else begin
+            tmpVariable = true or false dimp true;
+        end
+
+        Array1--;
+    end
+
+    while (Variable1 | false) begin
+        Variable1 = Variable & not true
+    end
+
+    foreach (tmpVar in Array1) begin 
+        tmpVar imp !Variable1;
+        tmpVar dimp !Variable2; 
+    end
+            
+    bool[] Function1(bool tmp1, bool tmp2)  begin
+        return tmp1 & tmp2 or tmp1 -> tmp2 <->  tmp1;
+    end
+
+    Function1(Variable1, Variable2);
+end

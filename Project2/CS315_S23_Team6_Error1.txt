@@ -1,0 +1,72 @@
+/* A NO ERROR VERSION OF THIS PROGRAM CAN BE FOUND WITH THE NAME CS315_S23_Team6_NoError1 */
+
+begin
+bool a = true;
+bool b = false;
+bool c = ((true imp (a & (a | b))) & (true | false) dimp (a & false));
+bool d;
+
+/* multi line
+    comment
+    comment
+    comment
+    */
+
+bool[] arr = TRUE, TRUE, FALSE, TRUE, FALSE, TRUE; /* ERROR 1: NO CURLY BRACKETS */
+bool[] arr2;
+
+func bool foo1(bool a, bool b) begin
+    return a & b;
+end
+
+func void foo2(bool abc, bool def) begin
+    if(abc) begin
+        abc = false;
+    end
+    elif(def) begin
+        def = false;
+    end
+    else begin
+        abc = false /* ERROR 2: NO SEMI-COLON AT THE END OF STATEMENT */
+        def = false;
+    end
+
+    return abc | def;
+end
+
+if( a == b ) begin
+    print(a);
+end
+elif( a != c ) begin
+    print(c);
+end
+else begin
+    print(b);
+end
+
+a = foo1(a, b);
+b = foo2(x, y);
+
+foreach(h in arr) begin
+    print(h & false);
+end
+
+print("abc
+def
+gh
+i");
+
+while(a & b) begin
+    bool yar = a & true;
+    bool ak = b & false;
+end
+
+if(#arr) begin
+    bool del = arr--;
+end 
+
+arr2 += TRUE;
+
+print(a, b, true&false);
+
+end

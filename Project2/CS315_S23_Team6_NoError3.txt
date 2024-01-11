@@ -1,0 +1,42 @@
+begin
+    /* declare variables */
+    bool a, b, c = false;
+    bool[] d = {true, false, true};
+
+    /* function definition */
+    func bool my_function(bool x, bool y, bool[] arr) begin
+        if( x and y ) begin
+	    arr += x | y;
+            return true;
+        end else begin
+            return false;
+        end
+    end
+
+    /* function call */
+    bool result = my_function(a, b);
+
+    /* while loop */
+    while (c) begin
+        print("hello");
+        c = false;
+    end
+
+    /* foreach loop */
+    foreach( i in d ) begin
+        if( i ) begin
+            print("true");
+        end elif(i == c) begin
+	    print("maybe");
+        end else begin
+            print("false");
+        end
+    end
+
+    while (#d) begin
+        d--;
+    end
+
+    /* output statement */
+    print("done");
+end

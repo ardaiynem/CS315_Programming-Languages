@@ -1,0 +1,83 @@
+<script>
+
+  var refEnvChecker = "Deep Binding";
+
+  function main() {
+    var operationNumber = 1;
+    var list = [];
+
+    // Operation 1: Are formal and actial parameters type checked?
+    console.log("\nOperation " + operationNumber);
+    typeChecking(1, 2);
+    typeChecking(1, "2.0"); // NO TYPE CHECKING
+    operationNumber = operationNumber + 1;
+
+    // Operation 2: Are keyword (named) parameters supported?
+    // No, but object destructring
+    console.log("\nOperation " + operationNumber.toString());
+    console.log("NOT SUPPORTED");
+    operationNumber = operationNumber + 1;
+
+    // Operation 3: Are default paremeters supported?
+    console.log("\nOperation " + operationNumber.toString());
+    defaultParameters(1, 3);
+    defaultParameters(1);
+    operationNumber = operationNumber + 1;
+
+    // Operation 4: What are the paremeter passing methods provided?
+    console.log("\nOperation " + operationNumber.toString());
+
+    var tmpInt = 300;
+
+    console.log("\n-- Before function call --\ntmpInt in main: " +
+      tmpInt.toString() +
+      "\nlist in main: " +
+      list.join(" "));
+
+    parameterPassByValue(list, operationNumber);
+
+    console.log("\n-- After function call --\ntmpInt in main: " +
+      tmpInt.toString() +
+      "\nlist in main: " +
+      list.join(" "));
+    operationNumber = operationNumber + 1;
+
+    // Operation 5: Can subprograms be passed as parameters? If so, how is the referencing environment of the passed subprogram bound?
+    console.log("\nOperation " + operationNumber.toString());
+    var refEnvChecker = "Ad Hoc Binding";
+    subprogramPass(passedFunction, operationNumber);
+    operationNumber = operationNumber + 1;
+  }
+
+  function typeChecking(intVariable, intVariable2) {
+    console.log((intVariable + intVariable2).toString());
+  }
+
+  function defaultParameters(intVariable, defaultIntVariable = 5) {
+    console.log((intVariable + defaultIntVariable).toString());
+  }
+
+  // Only Pass-by-value where all objects' values are references Therefore it is pass-reference-by-value
+  function parameterPassByValue(list, intVariable) {
+    intVariable = 15;
+    list.push("addedElement");
+
+    console.log("\n-- In pass-by-value function call --\ntmpInt in function: " +
+      intVariable.toString() +
+      "\nlist in function: " +
+      list.join(" "));
+  }
+
+  function subprogramPass(functionVariable, intVariable) {
+    var refEnvChecker = "Shallow Binding";
+    functionVariable(intVariable);
+  }
+
+  function passedFunction(intVariable) {
+    console.log("Passed function with a parameter: " + intVariable.toString());
+    console.log("Binding refEnvChecker: " + refEnvChecker.toString());
+  }
+
+  main();
+
+</script>

@@ -1,0 +1,18 @@
+/* Program 2 in project documentation written in yarlang */
+begin
+    bool[] arr = {true, false};
+
+    bool foo(bool p, bool q, bool r) begin
+        if(r) begin
+            return p implies (q or r);
+        else 
+            return q double-implies r;
+        end
+    end
+    foreach(a in arr) begin
+        foreach(b in arr) begin
+            bool c = foo(p, q, false);
+            print(a, b, c); 
+        end
+    end
+end

@@ -1,0 +1,43 @@
+/* A NO ERROR VERSION OF THIS PROGRAM CAN BE FOUND WITH THE NAME CS315_S23_Team6_NoError3 */
+begin
+    /* declare variables */
+    bool a, b, c = false;
+    bool[] d = {true, false, true};
+
+    /* function definition */
+    func bool my_function(bool x, bool y) begin
+        if( x and y ) begin
+            return true;
+        end else begin
+            return false;
+        end
+    end
+
+    /* function call */
+    bool result = my_function(a, b);
+
+    /* while loop */
+    while (c) begin
+        print("hello");
+        c = false;
+    end
+
+    /* foreach loop */
+    foreach(in d ) begin /* ERROR 1: NO ID BEFORE IN KEYWORD */
+        if( i ) begin
+            print("true");
+	end elif( i == a) begin
+	    print("maybe");
+        end else begin
+            print("false");
+        end
+    end
+
+	
+    while (#d) begin
+        d--;
+    end
+
+    /* output statement */
+    print("done");
+end

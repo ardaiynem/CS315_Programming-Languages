@@ -1,0 +1,82 @@
+<script>
+
+  function main() {
+    var operationNumber = 1;
+
+    // Operation 1: Declare/create an empty list
+    console.log("\nOperation " + operationNumber);
+    var languages = [];
+    printResultingList(languages, operationNumber);
+    operationNumber = operationNumber + 1;
+
+    // Operation 2: Initialize a list with some values
+    console.log("\nOperation " + operationNumber.toString());
+    languages = ["Dart", "Go", "Javascript", "Lua", "Python", "Ruby", "Rust"];
+    printResultingList(languages, operationNumber);
+    operationNumber = operationNumber + 1;
+
+    // Operation 3: Check if the list is empty or not
+    console.log("\nOperation " + operationNumber.toString());
+    isListEmpty(languages);
+    printResultingList(languages, operationNumber);
+    operationNumber = operationNumber + 1;
+
+    // Operation 4: Add a new element to a list
+    console.log("\nOperation " + operationNumber.toString());
+    var newElement = "SQL";
+    languages.push(newElement);
+    printResultingList(languages, operationNumber);
+    operationNumber = operationNumber + 1;
+
+    // Operation 5: Check if a particular element exists in the list
+    console.log("\nOperation " + operationNumber.toString());
+    doesContain(languages, newElement);
+    printResultingList(languages, operationNumber);
+    operationNumber = operationNumber + 1;
+
+    // Operation 6: Remove a particular element from the list
+    console.log("\nOperation " + operationNumber.toString());
+    languages.splice(languages.indexOf(newElement), 1);
+    printResultingList(languages, operationNumber);
+    operationNumber = operationNumber + 1;
+
+    // Operation 7: Get the head and the tail of a list
+    console.log("\nOperation " + operationNumber.toString());
+    console.log("Head of the list is: " + languages[0]);
+    console.log("Tail of the list is: " + languages.slice(1, languages.length).join(" "));
+    printResultingList(languages, operationNumber);
+    operationNumber = operationNumber + 1;
+
+    // Operation 8: Print all of the elements in the list
+    console.log("\nOperation " + operationNumber.toString());
+    printResultingList(languages, operationNumber);
+    operationNumber = operationNumber + 1;
+  }
+
+  function isListEmpty(list) {
+    if (list.length == 0) {
+      console.log("List is empty");
+    } else {
+      console.log("List is not empty");
+    }
+  }
+
+  function doesContain(list, object) {
+    if (list.includes(object)) {
+      console.log("List contains " + object);
+    } else {
+      console.log("List does not contain " + object);
+    }
+  }
+
+  function printResultingList(list, operationNumber) {
+    console.log("List after Operation " +
+      operationNumber +
+      ": " +
+      list.join(" "));
+  }
+
+  main();
+
+
+</script>

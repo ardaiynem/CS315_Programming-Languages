@@ -1,0 +1,25 @@
+/* example program that gets input, stores it in array and outputs it in yarlang */
+begin
+    /*  a function that gets 
+        values from user and creates and array
+        params: void
+        return: array   */
+    bool[] getArrayFromUser() begin
+        bool[] arrIn;
+        print("Enter array values: ");
+        input(arrIn);
+        return arrIn;
+    end
+
+    bool[] arr = getArrayFromUser();
+
+    foreach(i in arr) begin
+        bool a;
+        bool b;
+        bool c;
+        a = i;
+        b = a & i;
+        c = b | a
+        print(a, b, c);
+    end
+end

@@ -1,0 +1,14 @@
+/* Program 1 in project documentation written in yarlang */
+begin
+	bool x, y, z;
+
+	print(“Enter values for x, y, z: “);
+	input(x, y, z);
+
+	while(x & y & z) begin
+		print(“enter at least one false value”);
+		input(x,y,z);
+	end
+
+	print( (x -> y) & (!x <-> z) );
+end

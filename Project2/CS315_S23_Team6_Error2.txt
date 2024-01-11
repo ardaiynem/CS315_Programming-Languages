@@ -1,0 +1,40 @@
+/* A NO ERROR VERSION OF THIS PROGRAM CAN BE FOUND WITH THE NAME CS315_S23_Team6_NoError2 */
+begin
+	bool x, y, z;
+	bool[] arr = {TRUE, FALSE, FALSE, FALSE, TRUE};
+
+	func bool foo(bool a, bool[] array) begin
+		bool f;
+		foreach(i in {TRUE, FALSE, true, TRUE, false}) begin
+			if(i) begin
+				bool c = a & i;
+				f = c | i;
+			end
+		end
+
+		return f;
+	
+x and y; /* ERROR 1: NON STATEMENT EXPRESSION */
+	print("Enter values for x, y, z: ");
+	input(x, y, z);
+
+	while(x & y & z) begin
+		print("enter at least one false value");
+		input(x,y,z);
+	end
+
+	foreach(i in {x, y, z}) begin
+		if(i) begin
+			print(i);
+		end
+		else begin
+			print(!i);
+		end
+	end
+
+	bool abc = foo(x, arr);
+	print(abc);
+
+	print( (x -> y) & (!x <-> z) );
+end
+/* ERROR 2: NO END AT THE END INTERRUPTING BEGIN-END MATCHING */
